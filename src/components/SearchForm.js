@@ -11,7 +11,14 @@ export class SearchForm extends Component {
 
     _handleSubmit = e => {
         e.preventDefault();
-        alert(this.state.inputMovie);
+        const { inputMovie } = this.state;
+        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${inputMovie}`)
+            .then(res => res.json())
+            .then(results => {
+                const { Search, totalResults } = results;
+                console.log({Search, totalResults});
+                this.props.onResults(Search);
+            });
     }
 
     render() {
@@ -22,7 +29,7 @@ export class SearchForm extends Component {
                         <input
                             type="text"
                             className="input"
-                            placeholder="Search a movie..."
+                            placeholder="Find a movie..."
                             onChange={this._handleChange}
                         />
                     </div>

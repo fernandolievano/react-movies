@@ -1,3 +1,6 @@
+html {
+  border-top: .5em double turquoise;
+}
 .App {
   text-align: center;
   padding-top: 3em; 
