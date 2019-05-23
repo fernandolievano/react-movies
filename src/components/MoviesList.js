@@ -15,7 +15,7 @@ export class MoviesList extends Component {
                     <div className="columns is-multiline is-vcentered is-centered is-mobile">
                         {
                             movies.map(movie => (
-                                <div key={movie.imdbID} className="column is-4">
+                                <div key={movie.imdbID} className="column is-5-mobile is-6-tablet is-4-desktop">
                                     <Movie
                                         title={movie.Title}
                                         poster={movie.Poster}

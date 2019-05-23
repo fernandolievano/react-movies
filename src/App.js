@@ -8,15 +8,22 @@ import { SearchForm } from './components/SearchForm';
 
 class App extends Component {
   state = {
-    results: []
+    results: [],
+    usedSearch: false
   }
 
   _handleResults = (results) => {
-    this.setState({ results });
+    this.setState({ results, usedSearch: true });
+  }
+
+  _renderResults = () => {
+    return this.state.results.length === 0
+        ? 'Sorry, results not found! :('
+        : <MoviesList movies={this.state.results} />
   }
 
   render() {
-    const { results } = this.state;
+    const { usedSearch } = this.state;
     return (
       <div className="App">
         <Title>Search Movies</Title>
@@ -24,9 +31,8 @@ class App extends Component {
           <SearchForm onResults={this._handleResults} />
         </div>
         {
-          this.state.results.length === 0
-            ? 'Sin resultados'
-            : <MoviesList movies={results} />
+          usedSearch ? this._renderResults()
+          : <small>Use the form to search a movie.</small>
         }
       </div>
     );
