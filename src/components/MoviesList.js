@@ -17,6 +17,7 @@ export class MoviesList extends Component {
                             movies.map(movie => (
                                 <div key={movie.imdbID} className="column is-5-mobile is-6-tablet is-4-desktop">
                                     <Movie
+                                        id={movie.imdbID}
                                         title={movie.Title}
                                         poster={movie.Poster}
                                         year={movie.Year}
