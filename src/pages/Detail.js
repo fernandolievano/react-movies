@@ -18,7 +18,7 @@ export class Detail extends Component {
     }
 
     _fetchMovie = ({ id }) => {
-        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${id}`)
+        fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${id}`)
             .then(res => res.json())
             .then(movie => {
                 this.setState({ movie });
