@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import { ButtonBackToHome } from '../components/ButtonBackToHome';
 
 export class Detail extends Component {
     static propTypes = {
@@ -33,7 +34,8 @@ export class Detail extends Component {
         const { Title, Poster, Actors, Metascore, Plot } = this.state.movie
         return (
             <div>
-                <Link to="/" className="button">Go Back</Link>
+                <ButtonBackToHome />
+                <hr/>
                 <h1>{Title}</h1>
                 <img src={Poster} alt={Title} className="img"/>
                 <h3>{Actors}</h3>  
