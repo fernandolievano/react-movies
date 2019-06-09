@@ -31,16 +31,32 @@ export class Detail extends Component {
     }
 
     render() {
-        const { Title, Poster, Actors, Metascore, Plot } = this.state.movie
+        const { Title, Poster, Actors, Metascore, Plot, Rated, Released, Runtime } = this.state.movie
         return (
-            <div>
+            <div className="section">
                 <ButtonBackToHome />
-                <hr/>
-                <h1>{Title}</h1>
-                <img src={Poster} alt={Title} className="img"/>
-                <h3>{Actors}</h3>  
-                <span>{Metascore}</span>
-                <p>{Plot}</p>
+                <hr />
+                <div className="container">
+                    <h1 className="title">{Title}</h1>
+                    <h3 className="subtitle">{Runtime}</h3>
+                    <p>
+                        <b>{Rated}</b>
+                    </p>
+                    <img src={Poster} alt={Title} className="img" />
+                    <p>
+                        <small>
+                            {Released}
+                        </small>
+                    </p>
+                    <h3 className="subtitle">{Actors}</h3>
+                    <p>
+                        <span className="tag is-info">{Metascore}</span>
+                        <br />
+                        <small>Metascore</small>
+                    </p>
+                    <hr />
+                    <p className="notification">{Plot}</p>
+                </div>
             </div>
         );
     }
