@@ -16,22 +16,29 @@ export class Home extends Component {
 
     _renderResults = () => {
         return this.state.results.length === 0
-            ? 'Sorry, results not found! :('
-            : <MoviesList movies={this.state.results} />
+            ? <div>
+                <small className="notification is-danger">
+                    Sorry, results not found
+                    </small>
+            </div>
+            : (<MoviesList movies={this.state.results} />)
     }
     render() {
         const { usedSearch } = this.state;
         return (
-            <section className="section home-bg">
+            <section className="section">
                 <article className="container">
                     <Title>React Movies</Title>
                     <div className="SearchForm-wrapper">
                         <SearchForm onResults={this._handleResults} />
                     </div>
+                </article>
+                <br />
+                <article className="container has-text-centered">
                     {
                         usedSearch
                             ? this._renderResults()
-                            : <small>Use the form to search a movie.</small>
+                            : ""
                     }
                 </article>
             </section>
