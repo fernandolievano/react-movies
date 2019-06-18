@@ -27,13 +27,13 @@ export class SearchForm extends Component {
                     <div className="control">
                         <input
                             type="text"
-                            className="input"
+                            className="input is-link"
                             placeholder="Find a movie..."
                             onChange={this._handleChange}
                         />
                     </div>
                     <div className="control">
-                        <button className="button is-primary">Search</button>
+                        <button className="button is-info">Search</button>
                     </div>
                 </div>
             </form>

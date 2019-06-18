@@ -1,5 +1,5 @@
 html {
-  border-top: 0.5em double turquoise;
+  border-top: 0.3em solid #209cee;
   background-image: url('/logo-bg.svg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -16,6 +16,10 @@ html {
 .SearchForm-wrapper {
   display: flex;
   justify-content: center;
+}
+.Poster {
+  border: 2px solid gainsboro;
+  border-radius: 5px;
 }
 a,
 button,

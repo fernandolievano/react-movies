@@ -44,7 +44,7 @@ export class Detail extends Component {
                     <p>
                         <b>{Rated}</b>
                     </p>
-                    <img src={Poster} alt={Title} className="img" />
+                    <img src={Poster} alt={Title} className="Poster" />
                     <p>
                         <small>
                             {Released}
