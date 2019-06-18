@@ -1,18 +1,35 @@
 html {
-  border-top: .5em double turquoise;
+  border-top: 0.5em double turquoise;
+  background-image: url('/logo-bg.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-size: contain;
 }
 .App {
   text-align: center;
-  padding-top: 3em; 
+  padding-top: 3em;
+  -moz-box-shadow: inset 0 0 1000px rgba(white, 0.3) !important;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(white, 0.3) !important;
+  box-shadow: inset 0 0 0 1000px rgba(white, 0.3) !important;
 }
 .SearchForm-wrapper {
   display: flex;
   justify-content: center;
 }
-a, button, .Movie {
+a,
+button,
+.Movie {
   transition: all 0.2s linear;
 }
 .Movie:hover {
   transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19)
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.section-bg {
+  -moz-box-shadow: inset 0 0 1000px rgba(gray 0.2);
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(gray 0.2);
+  box-shadow: inset 0 0 0 1000px rgba(gray 0.2);
+  border: 1px solid rgba(gray 0.5);
+  color: black !important;
 }

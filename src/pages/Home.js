@@ -20,19 +20,21 @@ export class Home extends Component {
             : <MoviesList movies={this.state.results} />
     }
     render() {
-    const { usedSearch } = this.state;
-    return (
-            <div className="">
-                <Title>Search Movies</Title>
-                <div className="SearchForm-wrapper">
-                    <SearchForm onResults={this._handleResults} />
-                </div>
-                {
-                    usedSearch
-                        ? this._renderResults()
-                        : <small>Use the form to search a movie.</small>
-                }
-            </div>
+        const { usedSearch } = this.state;
+        return (
+            <section className="section home-bg">
+                <article className="container">
+                    <Title>React Movies</Title>
+                    <div className="SearchForm-wrapper">
+                        <SearchForm onResults={this._handleResults} />
+                    </div>
+                    {
+                        usedSearch
+                            ? this._renderResults()
+                            : <small>Use the form to search a movie.</small>
+                    }
+                </article>
+            </section>
         );
     }
 }
